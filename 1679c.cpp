@@ -44,6 +44,9 @@ void solve(){
          }
         cout<<"NO\n";
      }
+     if(b1==b2){
+        cout<<"please like this video i have put in alot of efforts and that;s all";
+     }     
  } 
 }
 int main()

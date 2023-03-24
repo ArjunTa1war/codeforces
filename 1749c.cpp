@@ -18,7 +18,23 @@ void solve()
    cin>>n;
    vector<int>v(n);
    for(auto &x : v)cin>>x;
-   
+   sort(all(v));
+   int ans = 0;
+   for(int i = 1;i<=(n/2)+1;i++){
+       vector<int>vc(v);
+       int k = i;
+       while(k>0){
+          auto ind = upper_bound(all(vc),k)-vc.begin();
+          if(ind==0)break;
+          else vc[ind-1] = 1e9;
+          vc[0] = 1e9;
+          sort(all(vc));
+          k--;
+       }
+       if(k!=0)break;
+       ans = i;
+   }
+   cout<<ans<<"\n";
 }
 int main()
 {
@@ -36,3 +52,6 @@ int main()
     }
     return 0;
 }
+
+/*we don't need to use our brain for it it is just a brute
+forces just check for all cases your question will be done :)*/
